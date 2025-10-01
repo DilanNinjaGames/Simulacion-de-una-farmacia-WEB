@@ -122,3 +122,22 @@ ul {
         text-align: center;
     }
 }
+
+/*==CARRITO==*/
+#carrito {
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #16697A;
+    border-radius: 8px;
+    max-width: 400px;
+    background: #fff;
+}
+#carrito ul {
+    list-style: none;
+    padding: 0;
+}
+#carrito li {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
