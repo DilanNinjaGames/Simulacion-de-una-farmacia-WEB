@@ -6,101 +6,119 @@
 #FFA62B
 */
 
-body{
-    margin: auto;
+body {
+    margin: 0;
     background-color: #EDE7E3;
     text-align: justify;
     letter-spacing: 2px;
+    line-height: 1.8;   /* relativo al tamaño de la fuente */
     font-size: 18px;
     font-family: sans-serif, Arial;
     line-height: 25px;
 }
 
-header{
-    height: 15%;
+/* === HEADER === */
+header {
     width: 100%;
     position: fixed;
-    padding: 3px;
+    top: 0;
+    left: 0;
+    padding: 10px;
     background-color: #16697A;
+    z-index: 1000; /* asegura que quede encima */
 }
 
-h1{
-    margin-left: 7px;
-    margin-bottom: 7px;
-    font-family:Verdana, Tahoma, sans-serif;
+h1 {
+    margin: 5px 0 10px 10px;
+    font-family: Verdana, Tahoma, sans-serif;
     color: #d8d8d8;
 }
 
-.navbar{
+.navbar {
     list-style: none;
     margin: 0;
-    padding: 10px;
-
-    display: flex;          /* activa flexbox */
-    gap: 75px;              /* espacio entre los items */
+    padding: 0;
+    display: flex;
+    gap: 40px; /* más razonable */
+    flex-wrap: wrap; /* si no entra, que baje */
 }
 
-main{
-    padding-top: 170px;
-    padding: 160px 15px 20px 15px;
+/* === MAIN === */
+main {
+    padding: 140px 15px 20px 15px; /* solo uno */
 }
 
-a{
+/* === LINKS === */
+a {
     color: #82C0CC;
     font-weight: bold;
-    text-decoration:none
+    text-decoration: none;
 }
-
-a:hover{
+a:hover {
     color: #FFA62B;
     text-decoration: underline;
 }
 
-.caja{
-    margin: auto;
-    margin-top: 10px;
+/* === CAJAS === */
+.caja {
+    margin: 10px auto;
     padding: 15px;
     border-left: 6px #16697A solid;
-    /*border-right: 5px #16697A solid;*/
     border-radius: 5px;
 }
 
+/* === FOOTER === */
 footer {
     padding: 20px;
     background-color: #16697A;
     color: aliceblue;
+}
+
+.footer_contenedor {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* permite que se acomoden en móviles */
 }
 
-.footer_izquierda, .footer_derecha{
+.footer_izquierda, .footer_derecha {
+    flex: 1 1 300px; /* cada uno ocupa mínimo 300px, se apilan si no hay espacio */
     padding: 10px;
-    width: 50%;
-    height: 30%;
     box-sizing: border-box;
     border-left: 3px #d8d8d8 solid;
-    border-radius: 1%;
+    border-radius: 5px;
 }
 
-.redes{
-    color: aliceblue;
-}
-
-ul{
+/* === LISTAS === */
+ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-#productos{
+/* === PRODUCTOS === */
+#productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
     padding: 20px;
 }
-
 .producto {
     background: #f9f9f9;
     padding: 15px;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 10px 10px 5px rgba(19, 18, 18, 0.1);
+    box-shadow: 5px 5px 10px rgba(19, 18, 18, 0.1);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .navbar {
+        gap: 20px;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
 }
